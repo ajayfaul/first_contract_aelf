@@ -1,0 +1,39 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Emojis</title>
+<style>
+  body {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .emoji {
+    display: none; /* Initially hide emojis */
+    margin: 10px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+</style>
+<script src="chrome-extension://nngceckbapebfimnlniiiahkandclblb/content/fido2/page-script.js" id="bw-fido2-page-script"></script></head>
+<body cz-shortcut-listen="true">
+  <h1>Find the Hidden Emojis!</h1>
+  <div class="emojis">
+    <!-- Hidden emojis will be dynamically added here -->
+  <span class="emoji">☀️</span><span class="emoji">⚽️</span><span class="emoji">⌚️</span><span class="emoji">⚡️</span><span class="emoji">✈️</span><span class="emoji">❤️</span><span class="emoji">☕️</span></div>
+
+  <script>
+    const emojis = ['☀️', '⚽️', '⌚️', '⚡️', '✈️', '❤️', '☕️'];
+    const emojisContainer = document.querySelector('.emojis');
+
+    // Display hidden emojis
+    emojis.forEach(emoji => {
+      const span = document.createElement('span');
+      span.classList.add('emoji');
+      span.textContent = emoji;
+      emojisContainer.appendChild(span);
+    });
+  </script>
+
+
+</body></html>
